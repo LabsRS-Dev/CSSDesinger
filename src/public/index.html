@@ -1,0 +1,739 @@
+<html id="cssdesigner" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description"/>
+    <meta content="Romanysoft LAB." name="author" />
+    <title>CSSDesigner</title>
+    <meta charset='utf-8'/>
+
+    <link href='styles/style.css' rel='stylesheet'/>
+
+</head>
+<body>
+<div class='license hidden'>
+    <div class='title'>Licence Manager</div>
+    <div class='browse'>
+        Browser licence file (*.lic)
+        <input id='lic' type='button' value='Choose file' />
+        <input id='cont' type='button' value='Close' />
+    </div>
+    <div class='error hidden'>
+        <i class='icon-warning-sign'></i>
+        <span>Invalid License!</span>
+    </div>
+    <div class='success hidden'>
+        <i class='icon-ok'></i>
+        <span>Your license is valid!</span>
+    </div>
+</div>
+<app>
+<footer>
+    <a>
+        CSSDesigner &copy; Romanysoft LAB. 2016
+    </a>
+</footer>
+<top>
+    <header>
+        <appName>CSS<strong>Designer</strong></appName>
+        <appVersion></appVersion>
+    </header>
+    <div>
+        <icon class='icon-file' tooltip='New'></icon>
+        <icon class='icon-folder-open' tooltip='Open'></icon>
+        <icon class='icon-save' tooltip='Save'></icon>
+        <icon class='icon-undo' tooltip='Undo'></icon>
+        <icon class='icon-repeat' tooltip='Redo'></icon>
+        <separator></separator>
+        <!--<icon class='icon-download-alt' tooltip='Export'></icon>-->
+        <icon class='icon-bug' tooltip='Feedback'></icon>
+        <icon class='icon-support' tooltip='Help'></icon>
+    </div>
+</top>
+<bottom class='closed'>
+    <handle>
+        <div class='wrp'>
+            <icon class='icon-tasks'></icon>
+            Source Code
+            <icon class='icon-paste' tooltip='Copy'></icon>
+        </div>
+    </handle>
+    <div class='codewrap'>
+        <pre><code></code></pre>
+    </div>
+</bottom>
+<right>
+<form class='basic-controls'>
+    <fieldset>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            basic
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='2000' min='0' name='width' step='1' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='2000' min='0' name='height' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='1.0' min='0.0' name='opacity' step='0.01' type='range'/>
+                <label></label>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='background-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            background
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='100' min='0' name='fill' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='300' min='0' name='position-x' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='300' min='0' name='position-y' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <input data-type='color' name='top-color' type='text'/>
+                <label>top</label>
+            </div>
+            <div class='field small'>
+                <input data-type='color' name='bottom-color' type='text'/>
+                <label>bottom</label>
+            </div>
+            <div class='field small'>
+                <label>repeat</label>
+                <select name='repeat'>
+                    <option value='repeat'>Repeat</option>
+                    <option value='repeat-x'>Repeat X</option>
+                    <option value='repeat-y'>Repeat Y</option>
+                    <option value='no-repeat'>No Repeat</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>size</label>
+                <select name='size'>
+                    <option value='auto'>Auto</option>
+                    <option value='cover'>Cover</option>
+                    <option value='contain'>Contain</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>image</label>
+                <input accept='image/*' name='image' type='file'/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='bevel-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            bevel
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='20' min='0' name='blur' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='20' min='0' name='height' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>highlight</label>
+                <input data-type='color' name='highlight' type='text'/>
+            </div>
+            <div class='field small'>
+                <label>shadow</label>
+                <input data-type='color' name='shadow' type='text'/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='border-radius-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            border-radius
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <tabcontrols>
+                <handle>
+                    <icon class='icon-link'></icon>
+                </handle>
+                <handle>
+                    <icon class='icon-tasks'></icon>
+                </handle>
+            </tabcontrols>
+            <tab>
+                <div class='field'>
+                    <input max='100' min='0' name='radius' type='range'/>
+                    <label></label>
+                </div>
+            </tab>
+            <tab>
+                <div class='field'>
+                    <input max='100' min='0' name='top-left-radius' type='range'/>
+                    <label></label>
+                </div>
+                <div class='field'>
+                    <input max='100' min='0' name='top-right-radius' type='range'/>
+                    <label></label>
+                </div>
+                <div class='field'>
+                    <input max='100' min='0' name='bottom-left-radius' type='range'/>
+                    <label></label>
+                </div>
+                <div class='field'>
+                    <input max='100' min='0' name='bottom-right-radius' type='range'/>
+                    <label></label>
+                </div>
+            </tab>
+        </div>
+    </fieldset>
+</form>
+<form class='border-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            border
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <tabcontrols>
+                <handle>
+                    <icon class='icon-link'></icon>
+                </handle>
+                <handle>
+                    <icon class='icon-tasks'></icon>
+                </handle>
+            </tabcontrols>
+            <tab>
+                <div class='field'>
+                    <input max='20' min='0' name='width' type='range'/>
+                    <label></label>
+                </div>
+                <div class='field small'>
+                    <label>style:</label>
+                    <select name='style'>
+                        <option value='solid'>Solid</option>
+                        <option value='dashed'>Dashed</option>
+                        <option value='dotted'>Dotted</option>
+                    </select>
+                </div>
+                <div class='field small'>
+                    <label>color:</label>
+                    <input name='color' type='text'/>
+                </div>
+            </tab>
+            <tab>
+                <column2>
+                    <div class='field'>
+                        <input max='20' min='0' name='top-width' type='range'/>
+                    </div>
+                    <div class='field small'>
+                        <select name='top-style'>
+                            <option value='solid'>Solid</option>
+                            <option value='dashed'>Dashed</option>
+                            <option value='dotted'>Dotted</option>
+                        </select>
+                    </div>
+                    <div class='field small'>
+                        <input data-type='color' name='top-color' type='text'/>
+                    </div>
+                    <div class='field'>
+                        <input max='20' min='0' name='bottom-width' type='range'/>
+                    </div>
+                    <div class='field small'>
+                        <select name='bottom-style'>
+                            <option value='solid'>Solid</option>
+                            <option value='dashed'>Dashed</option>
+                            <option value='dotted'>Dotted</option>
+                        </select>
+                    </div>
+                    <div class='field small'>
+                        <input data-type='color' name='bottom-color' type='text'/>
+                    </div>
+                </column2>
+                <column2>
+                    <div class='field'>
+                        <input max='20' min='0' name='left-width' type='range'/>
+                    </div>
+                    <div class='field small'>
+                        <select name='left-style'>
+                            <option value='solid'>Solid</option>
+                            <option value='dashed'>Dashed</option>
+                            <option value='dotted'>Dotted</option>
+                        </select>
+                    </div>
+                    <div class='field small'>
+                        <input data-type='color' name='left-color' type='text'/>
+                    </div>
+                    <div class='field'>
+                        <input max='20' min='0' name='right-width' type='range'/>
+                    </div>
+                    <div class='field small'>
+                        <select name='right-style'>
+                            <option value='solid'>Solid</option>
+                            <option value='dashed'>Dashed</option>
+                            <option value='dotted'>Dotted</option>
+                        </select>
+                    </div>
+                    <div class='field small'>
+                        <input data-type='color' name='right-color' type='text'/>
+                    </div>
+                </column2>
+            </tab>
+        </div>
+    </fieldset>
+</form>
+<form class='inner-shadow-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            inner-shadow
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='100' min='0' name='blur' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='40' min='-40' name='x' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='40' min='-40' name='y' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='40' min='0' name='spread' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <input name='color' type='text'/>
+                <label>color:</label>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='outer-shadow-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            outer-shadow
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='100' min='0' name='blur' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='40' min='-40' name='x' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='40' min='-40' name='y' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='40' min='0' name='spread' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>color:</label>
+                <input name='color' type='text'/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='text-filter-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            text
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='60' min='0' name='size' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>color:</label>
+                <input data-type='color' name='color' type='text'/>
+            </div>
+            <div class='field'>
+                <input max='200' min='0' name='x' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='200' min='0' name='y' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='60' min='0' name='line-height' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>font:</label>
+                <select name='font'>
+                    <option value='Arial'>Arial</option>
+                    <option value='serif'>Serif</option>
+                    <option value='sans'>Sans</option>
+                    <option value='FontAwesome'>Font Awesome</option>
+                    <option value='Ubuntu'>Ubuntu</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>weight:</label>
+                <select name='weight'>
+                    <option value='lighter'>Light</option>
+                    <option value='normal'>Normal</option>
+                    <option value='bold'>Bold</option>
+                    <option value='bolder'>Bolder</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>style:</label>
+                <select name='style'>
+                    <option value='normal'>Normal</option>
+                    <option value='italic'>Italic</option>
+                    <option value='oblique'>Oblique</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>decoration:</label>
+                <select name='decoration'>
+                    <option value='none'>none</option>
+                    <option value='underline'>underline</option>
+                    <option value='overline'>overline</option>
+                    <option value='line-through'>line through</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>align:</label>
+                <select name='align'>
+                    <option value='left'>left</option>
+                    <option value='right'>right</option>
+                    <option value='center'>center</option>
+                </select>
+            </div>
+            <div class='field small'>
+                <label>transform:</label>
+                <select name='transform'>
+                    <option value='none'>none</option>
+                    <option value='capitalize'>capitalize</option>
+                    <option value='uppercase'>uppercase</option>
+                    <option value='lowercase'>lowercase</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='text-stroke-controls'>
+    <fieldset class='closed'>
+        <div class='legend warning'>
+            <icon class='icon-undo'></icon>
+            text-stroke
+            <close>
+                <icon class='icon-warning-sign'></icon>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='20' min='0' name='width' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>color:</label>
+                <input name='color' type='text'/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='text-shadow-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            text-shadow
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='50' min='0' name='blur' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='20' min='-20' name='x' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='20' min='-20' name='y' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>color:</label>
+                <input name='color' type='text'/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='text-bevel-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            text-bevel
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='20' min='0' name='blur' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='20' min='0' name='height' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>highlight:</label>
+                <input data-type='color' name='highlight' type='text'/>
+            </div>
+            <div class='field small'>
+                <label>shadow:</label>
+                <input data-type='color' name='shadow' type='text'/>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='transform-controls'>
+    <fieldset class='closed'>
+        <div class='legend'>
+            <icon class='icon-undo'></icon>
+            transform
+            <close>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='360' min='0' name='rotation' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='4.0' min='0.0' name='scalex' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='4.0' min='0.0' name='scaley' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='360' min='0' name='skewx' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='360' min='0' name='skewy' type='range'/>
+                <label></label>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<form class='filter-controls'>
+    <fieldset class='closed'>
+        <div class='legend warning'>
+            <icon class='icon-undo'></icon>
+            filter
+            <close>
+                <icon class='icon-warning-sign'></icon>
+            </close>
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='100' min='0' name='blur' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='1.0' min='0.0' name='grayscale' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='1.0' min='0.0' name='sepia' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='10' min='0' name='saturate' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='360' min='0' name='huerotate' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='10' min='0' name='brightness' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='10' min='0' name='contrast' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='1.0' min='0.0' name='invert' step='0.01' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='1.0' min='0.0' name='opacity' step='0.01' type='range'/>
+                <label></label>
+            </div>
+        </div>
+    </fieldset>
+</form>
+</right>
+<overlay class='hidden'></overlay>
+<modal id='alert'>
+    <text>
+        <icon class='icon-shopping-cart'></icon>
+        Information
+    </text>
+    <p></p>
+    <input name='close' type='button' value='Buy'/>
+    <input name='ok' type='button' value='Ok'/>
+</modal>
+<modal id='text'>
+    <text>
+        <icon class='icon-pencil'></icon>
+    </text>
+    <input name='input' type='text'/>
+    <input name='ok' type='button' value='Ok'/>
+    <input name='close' type='button' value='Cancel'/>
+</modal>
+<modal id='textarea'>
+    <text>
+        <icon class='icon-pencil'></icon>
+    </text>
+    <textarea name='input'></textarea>
+    <input name='ok' type='button' value='Ok'/>
+    <input name='close' type='button' value='Cancel'/>
+</modal>
+<modal id='publish'>
+    <text>
+        <icon class='icon-cloud'></icon>
+    </text>
+    <label>Title</label>
+    <input name='title' type='text'/>
+    <label>Description</label>
+    <textarea name='description'></textarea>
+
+    <p>
+        By publishing the current document, a snapshot will be made publicly
+        accessible by URL.
+    </p>
+    <input name='ok' type='button' value='Ok'/>
+    <input name='close' type='button' value='Cancel'/>
+</modal>
+<left>
+    <fieldset name='layers'>
+        <div class='legend'>
+            <icon class='icon-tasks'></icon>
+            Layers
+        </div>
+        <div class='controls'>
+            <div id='layers'>
+                <item hidden='true'>
+                    <icon class='icon-eye-open'></icon>
+                    <icon class='icon-lock disabled'></icon>
+                    <icon class='icon-asterisk disabled'></icon>
+                    <name>{{name}}</name>
+                </item>
+            </div>
+            <buttons>
+                <button name='duplicate_layer'>
+                    <icon class='icon-paste'></icon>
+                </button>
+                <button name='add_layer'>
+                    <icon class='icon-plus'></icon>
+                </button>
+                <button name='remove_layer'>
+                    <icon class='icon-minus'></icon>
+                </button>
+                <button name='move_layer_up'>
+                    <icon class='icon-chevron-up'></icon>
+                </button>
+                <button name='move_layer_down'>
+                    <icon class='icon-chevron-down'></icon>
+                </button>
+            </buttons>
+        </div>
+    </fieldset>
+    <fieldset name='settings'>
+        <div class='legend'>
+            <icon class='icon-cogs'></icon>
+            Viewport
+        </div>
+        <div class='controls'>
+            <div class='field'>
+                <input max='3000' min='0' name='width' type='range'/>
+                <label></label>
+            </div>
+            <div class='field'>
+                <input max='3000' min='0' name='height' type='range'/>
+                <label></label>
+            </div>
+            <div class='field small'>
+                <label>color:</label>
+                <input name='color' type='text'/>
+            </div>
+        </div>
+    </fieldset>
+
+    <content></content>
+</left>
+</app>
+
+
+<!--基础库加载-->
+<!--<script src="common/jquery/jquery-1.12.4.min.js" onload="(function(){ try{window.$ = window.jQuery = module.exports;}catch(e){}})();"></script>-->
+<script src="common/jquery/jquery-3.1.1.min.js"
+        onload="(function(){ try{window.$ = window.jQuery = module.exports;}catch(e){}})();"></script>
+<script src="common/jquery/jquery-migrate-3.0.0.min.js"></script>
+
+<!--核心启动加载-->
+<script src="js/util.js"></script>
+<script src="js/bs.js"></script>
+
+<!--需要提前加载-->
+<script src="js/pre_load/convertPointFromPageToNode.js"></script>
+<script src="js/pre_load/crystal.js"></script>
+<script src="js/pre_load/index.js"></script>
+
+<!--App 加载-->
+<script src="js/load.js"></script>
+</body>
+</html>
